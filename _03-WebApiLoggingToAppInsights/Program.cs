@@ -14,9 +14,9 @@ if (Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING") 
 builder.Services.AddApplicationInsightsTelemetry();
 
 // Adding this filter makes LogInformation turn up for namespace CommonLogging. This can only be set in code, not in appsettings.json.
-// But only logs from CommonLogging namespace are shown. Any else needs to be added.
+// But only logs from CommonLogging namespace are shown. Note: looks like "" means the rest of the namespaces.
 builder.Logging.AddFilter<ApplicationInsightsLoggerProvider>("CommonLogging", LogLevel.Information);
-builder.Logging.AddFilter<ApplicationInsightsLoggerProvider>("Microsoft", LogLevel.Error);
+builder.Logging.AddFilter<ApplicationInsightsLoggerProvider>("", LogLevel.Warning);
 
 builder.Services.AddOpenApi();
 
