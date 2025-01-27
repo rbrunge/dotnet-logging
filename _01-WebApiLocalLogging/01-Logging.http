@@ -1,0 +1,23 @@
+@HostAddress = https://localhost:7156
+
+GET {{HostAddress}}/api/test/log-all
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/api/test/throw
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/api/test/throw-try-catch
+Accept: application/json
+
+###
+
+POST {{HostAddress}}/api/test/source-generated
+Content-Type: text/plain
+
+This is a test message
+###
+

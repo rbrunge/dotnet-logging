@@ -54,9 +54,10 @@ public static class LoggingApi
             HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
-            var body = await reader.ReadToEndAsync();
+            var body = await reader.ReadToEndAsync()
+                       ?? "Message is empty - This is a test ...";
 
-            Log.CouldNotOpenSocket(logger, body ?? "Message is empty - This is a test ...");
+            logger.CustomSourceGeneratedLogMessage(body );
 
             return body;
         });
