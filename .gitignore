@@ -482,3 +482,5 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+_01-WebApiLocalLogging/bin/Debug/net9.0/_01-WebApiLocalLogging.dll
+_01-WebApiLocalLogging/bin/Debug/net9.0/_01-WebApiLocalLogging.pdb
