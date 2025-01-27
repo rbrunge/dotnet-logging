@@ -6,6 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder1", "Solution
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 		Directory.Packages.props = Directory.Packages.props
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02-WebApiSerilogLogging", "_02-WebApiSerilogLogging\_02-WebApiSerilogLogging.csproj", "{EBDC3D9C-4185-4A82-8283-31E7E828DC7E}"

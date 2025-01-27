@@ -8,10 +8,6 @@ using Scalar.AspNetCore;
        Debug: Logs are written to the debug output.
        EventSource: Logs are written to an EventSource for monitoring and diagnostics.
        EventLog: On Windows, logs are written to the Windows Event Log1
-       
-       use command to show event source data:
-       
-         dotnet-trace collect --providers Microsoft-Windows-DotNETRuntime:4:4 --process-id 1234
    
  */
 

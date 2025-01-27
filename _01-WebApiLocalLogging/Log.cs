@@ -1,3 +1,4 @@
+// ReSharper disable once CheckNamespace
 namespace CommonLogging;
 
 public static partial class Log

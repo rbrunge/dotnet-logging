@@ -16,3 +16,9 @@ Call GET endpoints to activate the logging:
 ## 03 Web Api logging to app insights (no serilog)
 
 ## 04 Web Api logging to app insights using serilog
+
+## 05 Web Api logging to app insights using open telemetry
+
+## 06 Umbraco with serilog and app insight (Open telemetry?)
+
+
