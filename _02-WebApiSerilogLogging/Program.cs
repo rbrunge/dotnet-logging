@@ -23,9 +23,9 @@ var app = builder.Build();
 app.UseSerilogRequestLogging();
 
 app.MapOpenApi();
-app.MapScalarApiReference(options => //  => https://localhost:7156/scalar/v1
+app.MapScalarApiReference(options => //  => https://localhost:7277/scalar/v1
 {
-    options.WithTitle(".WithTitle from Program.cs");
+    options.WithTitle("02 from Program.cs");
 });
 
 

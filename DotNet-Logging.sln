@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02-WebApiSerilogLogging", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_00-VeryBasicConsoleAppLogging", "_00-VeryBasicConsoleAppLogging\_00-VeryBasicConsoleAppLogging.csproj", "{46A1246A-0298-4B55-AFA2-632E0ED6CC0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03-WebApiLoggingToAppInsights", "_03-WebApiLoggingToAppInsights\_03-WebApiLoggingToAppInsights.csproj", "{D57BB20F-9E18-4337-AD04-335017BDB9DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{46A1246A-0298-4B55-AFA2-632E0ED6CC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46A1246A-0298-4B55-AFA2-632E0ED6CC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46A1246A-0298-4B55-AFA2-632E0ED6CC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D57BB20F-9E18-4337-AD04-335017BDB9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57BB20F-9E18-4337-AD04-335017BDB9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57BB20F-9E18-4337-AD04-335017BDB9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57BB20F-9E18-4337-AD04-335017BDB9DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

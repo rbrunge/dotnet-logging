@@ -21,7 +21,7 @@ var app = builder.Build();
 app.MapOpenApi();
 app.MapScalarApiReference(options => //  => https://localhost:7156/scalar/v1
 {
-    options.WithTitle(".WithTitle from Program.cs");
+    options.WithTitle("01 from Program.cs");
 });
 
 app.UseHttpsRedirection();

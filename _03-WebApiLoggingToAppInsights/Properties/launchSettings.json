@@ -1,0 +1,15 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7086",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",  
+        "xxAPPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=6f567061-1d56-488b-a229-5639a1a5e572"
+      }
+    }
+  }
+}

@@ -15,10 +15,11 @@ Call GET endpoints to activate the logging:
 
 ## 03 Web Api logging to app insights (no serilog)
 
-## 04 Web Api logging to app insights using serilog
+## 04 Web Api logging to app insights using open telemetry
+https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable?tabs=aspnetcore#enable-azure-monitor-opentelemetry-for-net-nodejs-python-and-java-applications
 
-## 05 Web Api logging to app insights using open telemetry
+As of 2025-01-27 Microsoft recommends abandoning .AddApplicationInsightsTelemetry() in favor of OpenTelemetry.
 
-## 06 Umbraco with serilog and app insight (Open telemetry?)
+## ?? Umbraco with serilog and app insight (Open telemetry?)
 
 

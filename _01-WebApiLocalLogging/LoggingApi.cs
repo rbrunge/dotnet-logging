@@ -19,16 +19,7 @@ public static class LoggingApi
             logger.LogError($"LogError from TestController at {dt}");
             logger.LogCritical($"LogCritical from TestController at {dt}");
 
-            List<string> result =
-            [
-                "LogDebug should not be shown in console",
-                "LogTrace should not be shown in console",
-                "LogInformation should be shown in console",
-                "LogWarning should be shown in console",
-                "LogError should be shown in console",
-                "LogCritical should be shown in console"
-            ];
-            return Results.Ok(result);
+            return Results.Ok("Log messages sent");
         });
 
         group.MapGet("/throw",
@@ -41,11 +32,11 @@ public static class LoggingApi
         {
             try
             {
-                throw new CustomException("Testing throw with no handling");
+                throw new CustomException("Testing throw with try catch");
             }
             catch (CustomException e)
             {
-                Console.WriteLine(e);
+                logger.LogError(e, e.Message);
             }
         });
 
