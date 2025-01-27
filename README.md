@@ -4,7 +4,12 @@
 Shows how use LoggerFactory to control LogLevel and log using ILogger. All logging is to console.
 
 ## 01 WebApiLocalLogging
-Logging to console using `Microsoft.Extensions.Logging` in a WebApi project.
+Web API that logs to console.
+Call GET endpoints to activate the logging:
+- /api/test/log-all
+- /api/test/throw
+- /api/test/throw-try-catch
+- /api/test/source-generated
 
 ## 02 Web Api logging using serilog
 
