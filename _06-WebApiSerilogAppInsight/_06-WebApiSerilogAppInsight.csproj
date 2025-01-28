@@ -13,10 +13,16 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
         <PackageReference Include="Scalar.AspNetCore" />
         <PackageReference Include="Serilog.AspNetCore" />
+        <PackageReference Include="Serilog.Extensions.Hosting" />
+        <PackageReference Include="Serilog.Sinks.ApplicationInsights" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\_01-WebApiLocalLogging\_01-WebApiLocalLogging.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageVersion Update="Serilog.Extensions.Hosting" Version="9.0.0" />
     </ItemGroup>
 
 </Project>

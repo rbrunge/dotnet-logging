@@ -8,17 +8,17 @@ public static class LoggingApi
     public static WebApplication AddLoggingApi(this WebApplication app)
     {
         var group = app.MapGroup("/api/test");
+        var executingAssemblyName = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name;
+        string MessagePostFix() => $"from TestController {DateTime.UtcNow:yyyy-MM-ddTHH:mm:ss} ({executingAssemblyName})";
 
         group.MapGet("/log-all", ([FromServices] ILogger<IAppMarker> logger) =>
         {
-            var executingAssemblyName = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name;
-            var messagePostFix = $"from TestController {DateTime.UtcNow:yyyy-MM-ddTHH:mm:ss} ({executingAssemblyName})";
-            logger.LogDebug($"LogDebug {messagePostFix}");
-            logger.LogTrace($"LogTrace {messagePostFix}");
-            logger.LogInformation($"LogInformation {messagePostFix}");
-            logger.LogWarning($"LogWarning {messagePostFix}");
-            logger.LogError($"LogError {messagePostFix}");
-            logger.LogCritical($"LogCritical {messagePostFix}");
+            logger.LogDebug("LogDebug {messagePostFix}", MessagePostFix());
+            logger.LogTrace("LogTrace {messagePostFix}", MessagePostFix());
+            logger.LogInformation("LogInformation {messagePostFix}", MessagePostFix());
+            logger.LogWarning("LogWarning {messagePostFix}", MessagePostFix());
+            logger.LogError("LogError {messagePostFix}", MessagePostFix());
+            logger.LogCritical("LogCritical {messagePostFix}", MessagePostFix());
 
             return Results.Ok("Log messages sent");
         });
@@ -26,14 +26,14 @@ public static class LoggingApi
         group.MapGet("/throw",
             ([FromServices] ILogger<IAppMarker> logger) =>
             {
-                throw new CustomException("Testing throw with no handling");
+                throw new CustomException("Testing throw with no handling, " + MessagePostFix());
             });
 
         group.MapGet("/throw-try-catch", ([FromServices] ILogger<IAppMarker> logger) =>
         {
             try
             {
-                throw new CustomException("Testing throw with try catch");
+                throw new CustomException("Testing throw with try catch, " + MessagePostFix());
             }
             catch (CustomException e)
             {
@@ -47,7 +47,7 @@ public static class LoggingApi
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync()
-                       ?? "Message is empty - This is a test ...";
+                       ?? MessagePostFix();
 
             logger.CustomSourceGeneratedLogMessage(body );
 
