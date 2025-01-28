@@ -7,9 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Some part of .AddApplicationInsightsTelemetry() is reading the connection string from environment variables and not 
 // from appsettings.json. This is a workaround to set the connection string in environment variables if it is not set.
 if (Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING") == null)
-{
-    Environment.SetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING", builder.Configuration["ApplicationInsights:ConnectionString"]);
-}
+    Environment.SetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING",
+        builder.Configuration["ApplicationInsights:ConnectionString"]);
 
 builder.Services.AddApplicationInsightsTelemetry();
 

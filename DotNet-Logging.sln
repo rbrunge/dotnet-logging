@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03-WebApiLoggingToAppInsig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_04-WebApiOpenTelemetry", "_04-WebApiOpenTelemetry\_04-WebApiOpenTelemetry.csproj", "{C1C35FCE-5C81-44E3-8E58-3F3D2C13C51A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_05-WebApiSerilogOtlp", "_05-WebApiSerilogOtlp\_05-WebApiSerilogOtlp.csproj", "{850F066F-EAE2-4374-BCED-3E6B6E28EE89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_06-WebApiSerilogAppInsight", "_06-WebApiSerilogAppInsight\_06-WebApiSerilogAppInsight.csproj", "{316D8D43-5006-4315-9030-34F73099E74E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,5 +47,13 @@ Global
 		{C1C35FCE-5C81-44E3-8E58-3F3D2C13C51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1C35FCE-5C81-44E3-8E58-3F3D2C13C51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1C35FCE-5C81-44E3-8E58-3F3D2C13C51A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{850F066F-EAE2-4374-BCED-3E6B6E28EE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{850F066F-EAE2-4374-BCED-3E6B6E28EE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{850F066F-EAE2-4374-BCED-3E6B6E28EE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{850F066F-EAE2-4374-BCED-3E6B6E28EE89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{316D8D43-5006-4315-9030-34F73099E74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{316D8D43-5006-4315-9030-34F73099E74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{316D8D43-5006-4315-9030-34F73099E74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{316D8D43-5006-4315-9030-34F73099E74E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
