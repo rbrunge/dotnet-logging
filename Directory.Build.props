@@ -5,6 +5,6 @@
     <Nullable>enable</Nullable>
     <CompressionEnabled>false</CompressionEnabled>
     <WarningsNotAsErrors>CS0618</WarningsNotAsErrors>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 </Project>

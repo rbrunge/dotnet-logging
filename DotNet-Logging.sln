@@ -22,6 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_05-WebApiSerilogOtlp", "_0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_06-WebApiSerilogAppInsight", "_06-WebApiSerilogAppInsight\_06-WebApiSerilogAppInsight.csproj", "{316D8D43-5006-4315-9030-34F73099E74E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_07-UmbracoSerilogApplicationInsight", "_07-UmbracoSerilogApplicationInsight\_07-UmbracoSerilogApplicationInsight.csproj", "{7796A7D8-A113-44C0-9BDD-B0D5052574D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E506F92-7228-4ABC-9DFA-D4DE707842AA} = {4E506F92-7228-4ABC-9DFA-D4DE707842AA}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +61,9 @@ Global
 		{316D8D43-5006-4315-9030-34F73099E74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{316D8D43-5006-4315-9030-34F73099E74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{316D8D43-5006-4315-9030-34F73099E74E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7796A7D8-A113-44C0-9BDD-B0D5052574D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7796A7D8-A113-44C0-9BDD-B0D5052574D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7796A7D8-A113-44C0-9BDD-B0D5052574D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7796A7D8-A113-44C0-9BDD-B0D5052574D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
