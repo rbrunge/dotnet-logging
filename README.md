@@ -20,6 +20,8 @@ https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable?t
 
 As of 2025-01-27 Microsoft recommends abandoning .AddApplicationInsightsTelemetry() in favor of OpenTelemetry.
 
+## 05 Serilog + Opentelemetry, web api
+
 ## ?? Umbraco with serilog and app insight (Open telemetry?)
 
 
