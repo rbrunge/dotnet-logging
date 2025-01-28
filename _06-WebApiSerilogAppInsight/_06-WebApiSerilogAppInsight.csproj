@@ -1,9 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>WebApiSerilogAppInsight</RootNamespace>
         <UserSecretsId>983985ab-a62f-4f5f-a032-d1843497df87</UserSecretsId>
     </PropertyGroup>

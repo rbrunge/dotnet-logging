@@ -14,11 +14,10 @@ var app = builder.Build();
 app.UseSerilogRequestLogging();
 
 app.MapOpenApi();
-app.MapScalarApiReference(options => //  => https://localhost:7277/scalar/v1
+app.MapScalarApiReference(options => //  => https://localhost:7727/scalar/v1
 {
     options.WithTitle("02 from Program.cs");
 });
-
 
 app.UseHttpsRedirection();
 

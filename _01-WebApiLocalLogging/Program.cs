@@ -11,15 +11,13 @@ using Scalar.AspNetCore;
    
  */
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 app.MapOpenApi();
-app.MapScalarApiReference(options => //  => https://localhost:7156/scalar/v1
+app.MapScalarApiReference(options => //  => https://localhost:7277/scalar/v1
 {
     options.WithTitle("01 from Program.cs");
 });
