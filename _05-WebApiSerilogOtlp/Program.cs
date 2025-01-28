@@ -10,33 +10,36 @@ if (Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING") 
     Environment.SetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING",
         builder.Configuration["ApplicationInsights:ConnectionString"]);
 
-builder.Services.AddOpenApi();
+builder.Services.AddOpenTelemetry()
+    .UseAzureMonitor();
+
+
 builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
+builder.Services.AddOpenApi();
 
 // NOTE: this is not working!
 // App wont run when both .UseSerilog() and .UseAzureMonitor() are used
-
-// builder.Services.AddOpenTelemetry()
-//     .UseAzureMonitor();
+// Cannot get passed "Loading ..." shown in threads window
 
 
-builder.Services.AddOpenTelemetry()
-    .WithTracing(x => x
-        .AddAzureMonitorTraceExporter(o =>
-        {
-            o.ConnectionString = Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING");
-        }))
-    // .WithMetrics(x => x.AddMeter(InstrumentationOptions.MeterName)
-    //
-    //     .AddAzureMonitorMetricExporter(o =>
-    //
-    //     {
-    //
-    //         o.ConnectionString = Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING");
-    //
-    //     }))
-    .UseAzureMonitor();
+//
+                          // builder.Services.AddOpenTelemetry()
+                          //     .WithTracing(x => x
+                          //         .AddAzureMonitorTraceExporter(o =>
+                          //         {
+                          //             o.ConnectionString = Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING");
+                          //         }))
+                          //     // .WithMetrics(x => x.AddMeter(InstrumentationOptions.MeterName)
+                          //     //
+                          //     //     .AddAzureMonitorMetricExporter(o =>
+                          //     //
+                          //     //     {
+                          //     //
+                          //     //         o.ConnectionString = Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING");
+                          //     //
+                          //     //     }))
+                          //     .UseAzureMonitor();
 
 var app = builder.Build();
 

@@ -10,15 +10,16 @@ if (Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING") 
     Environment.SetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING",
         builder.Configuration["ApplicationInsights:ConnectionString"]);
 
-builder.Services.AddOpenApi();
-
 builder.Services.AddApplicationInsightsTelemetry();
 
-builder.Host.UseSerilog((context, configuration) =>
-    configuration.ReadFrom.Configuration(context.Configuration));
+builder.Services.AddOpenApi();
+
+// builder.Host.UseSerilog((context, configuration) =>
+//     configuration.ReadFrom.Configuration(context.Configuration));
+
 
 var app = builder.Build();
-app.UseSerilogRequestLogging();
+//app.UseSerilogRequestLogging();
 
 app.MapOpenApi();
 app.MapScalarApiReference(options => options.WithTitle("06 from Program.cs")); // => https://localhost:7048/scalar/v1

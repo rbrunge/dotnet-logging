@@ -11,13 +11,14 @@ public static class LoggingApi
 
         group.MapGet("/log-all", ([FromServices] ILogger<IAppMarker> logger) =>
         {
-            var dt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss");
-            logger.LogDebug($"LogDebug from TestController at {dt}");
-            logger.LogTrace($"LogTrace from TestController at {dt}");
-            logger.LogInformation($"LogInformation from TestController at {dt}");
-            logger.LogWarning($"LogWarning from TestController at {dt}");
-            logger.LogError($"LogError from TestController at {dt}");
-            logger.LogCritical($"LogCritical from TestController at {dt}");
+            var executingAssemblyName = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name;
+            var messagePostFix = $"from TestController {DateTime.UtcNow:yyyy-MM-ddTHH:mm:ss} ({executingAssemblyName})";
+            logger.LogDebug($"LogDebug {messagePostFix}");
+            logger.LogTrace($"LogTrace {messagePostFix}");
+            logger.LogInformation($"LogInformation {messagePostFix}");
+            logger.LogWarning($"LogWarning {messagePostFix}");
+            logger.LogError($"LogError {messagePostFix}");
+            logger.LogCritical($"LogCritical {messagePostFix}");
 
             return Results.Ok("Log messages sent");
         });
