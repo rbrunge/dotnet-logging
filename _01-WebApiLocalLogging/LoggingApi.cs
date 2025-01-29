@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
 // ReSharper disable once CheckNamespace
@@ -9,17 +10,18 @@ public static class LoggingApi
     {
         var group = app.MapGroup("/api/test");
         var executingAssemblyName = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name;
-        string MessagePostFix() => $"from TestController {DateTime.UtcNow:yyyy-MM-ddTHH:mm:ss} ({executingAssemblyName})";
+        string MessagePostFix() => $"at {DateTime.UtcNow:yyyy-MM-ddTHH:mm:ss} ({executingAssemblyName})";
 
         group.MapGet("/log-all", ([FromServices] ILogger<IAppMarker> logger) =>
         {
-            logger.LogDebug("LogDebug {messagePostFix}", MessagePostFix());
-            logger.LogTrace("LogTrace {messagePostFix}", MessagePostFix());
-            logger.LogInformation("LogInformation {messagePostFix}", MessagePostFix());
-            logger.LogWarning("LogWarning {messagePostFix}", MessagePostFix());
-            logger.LogError("LogError {messagePostFix}", MessagePostFix());
-            logger.LogCritical("LogCritical {messagePostFix}", MessagePostFix());
-
+            var myStructuredData = JsonSerializer.Serialize(new MyRecord(MessagePostFix()));
+            logger.LogDebug("LogDebug {MyStructuredData}", myStructuredData);
+            logger.LogTrace("LogTrace {MyStructuredData}", myStructuredData);
+            logger.LogInformation("LogInformation {MyStructuredData}", myStructuredData);
+            logger.LogWarning("LogWarning {MyStructuredData}", myStructuredData);
+            logger.LogError("LogError {MyStructuredData}", myStructuredData);
+            logger.LogCritical("LogCritical {MyStructuredData}", myStructuredData);
+            
             return Results.Ok("Log messages sent");
         });
 
@@ -55,5 +57,19 @@ public static class LoggingApi
         });
 
         return app;
+    }
+
+    internal record MyRecord(string Message)
+    {
+        public DateTime TimeStamp { get; } = DateTime.UtcNow;
+
+        public Dictionary<string, object> MyDictionary { get; } = new()
+        {
+            { "key1", "value1" },
+            { "key2", 2 },
+            { "key3", new { subKey1 = "subValue1" } }
+        };
+        
+        public List<string> MyList { get; } = ["item1", "item2"];
     }
 }
